@@ -1,43 +1,27 @@
 {
-  "_args": [
-    [
-      "@carol/carol-sdk@0.1.12",
-      "C:\\Users\\ingow\\projects\\carolapp-std-tface"
-    ]
-  ],
-  "_from": "@carol/carol-sdk@0.1.12",
-  "_id": "@carol/carol-sdk@0.1.12",
-  "_inBundle": false,
-  "_integrity": "sha512-I1vEkCzVGEutwoBsM2clh5O7X2QGk/uhFlY0bHikfBe/KoPPt5PqLIWEZBY7KhslJb7Z/Qjl5rbFsLYtNrwnmg==",
-  "_location": "/@carol/carol-sdk",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "version",
-    "registry": true,
-    "raw": "@carol/carol-sdk@0.1.12",
-    "name": "@carol/carol-sdk",
-    "escapedName": "@carol%2fcarol-sdk",
-    "scope": "@carol",
-    "rawSpec": "0.1.12",
-    "saveSpec": null,
-    "fetchSpec": "0.1.12"
+  "name": "@carol/carol-sdk",
+  "version": "0.1.13",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "mocha --require ts-node/register test/**/*.ts"
   },
-  "_requiredBy": [
-    "/"
-  ],
-  "_resolved": "http://nexus3.carol.ai:8081/repository/npmjstotvs/@carol/carol-sdk/-/carol-sdk-0.1.12.tgz",
-  "_spec": "0.1.12",
-  "_where": "C:\\Users\\ingow\\projects\\carolapp-std-tface",
-  "author": {
-    "name": "TotvsLabs"
+  "publishConfig": {
+    "registry": "http://nexus3.carol.ai:8080/repository/npmjstotvs/"
   },
+  "files": [
+    "lib/**/*",
+    "src/update-model/**/*"
+  ],
+  "author": "TotvsLabs",
+  "license": "ISC",
   "dependencies": {
     "log-symbols": "^3.0.0",
     "request": "^2.88.0",
     "request-promise": "^4.2.4",
     "urlify": "^0.3.6"
   },
-  "description": "",
   "devDependencies": {
     "@types/chai": "^4.1.7",
     "@types/mocha": "^5.2.7",
@@ -45,20 +29,5 @@
     "mocha": "^6.1.4",
     "ts-node": "^8.2.0",
     "typescript": "^3.5.2"
-  },
-  "files": [
-    "lib/**/*",
-    "src/update-model/**/*"
-  ],
-  "license": "ISC",
-  "main": "index.js",
-  "name": "@carol/carol-sdk",
-  "publishConfig": {
-    "registry": "http://nexus3.carol.ai:8080/repository/npmjstotvs/"
-  },
-  "scripts": {
-    "build": "tsc",
-    "test": "mocha --require ts-node/register test/**/*.ts"
-  },
-  "version": "0.1.12"
+  }
 }
