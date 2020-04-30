@@ -57,6 +57,26 @@ class HttpClient {
         return this.processResponse(xhr);
     }
 
+    postForm(url: string, form: FormData, queryParams?: any): Promise<any> {
+        const xhr = new XMLHttpRequest();
+
+        if (queryParams) {
+            url += '?';
+            const queryUrl = Object.keys(queryParams).map(key => {
+                const value = queryParams[key];
+                return `${key}=${value}`;
+            });
+            url += queryUrl.join('&');
+        }
+
+        xhr.open('POST', `${this.baseUrl}${url}`);
+        xhr.setRequestHeader('accept', 'application/json');
+        xhr.setRequestHeader('authorization', this.authToken);
+        xhr.send(form);
+
+        return this.processResponse(xhr);
+    }
+
     delete(url: string): Promise<any> {
         const xhr = new XMLHttpRequest();
         xhr.open('DELETE', `${this.baseUrl}${url}`);

@@ -9,6 +9,7 @@ declare class HttpClient {
     removeInterceptor(name: any): void;
     postFormUrlencoded(url: string, data: string): Promise<unknown>;
     post(url: string, body: object, queryParams?: any): Promise<any>;
+    postForm(url: string, form: FormData, queryParams?: any): Promise<any>;
     delete(url: string): Promise<any>;
     get(url: string): Promise<any>;
     private runInterceptors;
