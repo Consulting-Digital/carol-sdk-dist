@@ -83,7 +83,7 @@ class HttpClient {
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.setRequestHeader('accept', 'application/json');
         xhr.setRequestHeader('authorization', this.authToken);
-
+        xhr.send();
         return this.processResponse(xhr);
     }
 
@@ -93,7 +93,7 @@ class HttpClient {
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.setRequestHeader('accept', 'application/json');
         xhr.setRequestHeader('authorization', this.authToken);
-
+        xhr.send();
         return this.processResponse(xhr);
     }
 
