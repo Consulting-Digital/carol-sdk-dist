@@ -39,7 +39,19 @@ reader.question('Url eg: "org.carol.ai": ', url => {
 function authenticate (url, environment, username, password) {
 
   conf.baseUrl = `https://${url}`;
-
+  console.log('conf.baseUrl: ' + conf.baseUrl)
+  console.log({
+    method: 'POST',
+    uri: `${conf.baseUrl}/api/v1/oauth2/token`,
+    form: {
+      grant_type: 'password',
+      username: username,
+      password: password,
+      subdomain: environment,
+      connectorId: '0a0829172fc2433c9aa26460c31b78f0'
+    }
+  })
+  
   return rp({
     method: 'POST',
     uri: `${conf.baseUrl}/api/v1/oauth2/token`,
